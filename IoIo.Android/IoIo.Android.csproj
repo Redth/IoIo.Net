@@ -1,24 +1,43 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0-android</TargetFramework>
-    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <IsBinding>True</IsBinding>
+	<TargetFramework>net8.0-android</TargetFramework>
+	<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+	<Nullable>enable</Nullable>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<IsBinding>True</IsBinding>
+
+	<PackageId>Redth.IoIo.Android</PackageId>
+	<Summary>.NET MAUI Android bindings for the IOIO development board</Summary>
+	<Title>IOIO Bindings for .NET MAUI</Title>
+	<AssemblyFileVersion>$(PackageVersion)</AssemblyFileVersion>
+	<Authors>Redth</Authors>
+	<NeutralLanguage>en</NeutralLanguage>
+	<Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+	<GitThisAssemblyMetadata>True</GitThisAssemblyMetadata>
+	<RepositoryUrl>$(GitRepositoryUrl)</RepositoryUrl>
+	<RepositoryCommit>$(GitCommit)</RepositoryCommit>
+	<RepositoryBranch>$(GitBranch)</RepositoryBranch>
+	<RepositoryType>git</RepositoryType>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<DebugType>portable</DebugType>
+	<DebugSymbols>true</DebugSymbols>
+	<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-      <AndroidLibrary Include="../external/IOIOLibAndroidAccessory-release.aar" />
-      <AndroidLibrary Include="../external/IOIOLibAndroidBluetooth-release.aar" />
-      <AndroidLibrary Include="../external/IOIOLibAndroidDevice-release.aar" />
-      <AndroidLibrary Include="../external/IOIOLibAndroid-release.aar" />
-      <AndroidLibrary Include="../external/IOIOLibCore-6.2.0.jar" />
+	  <AndroidLibrary Include="../external/IOIOLibAndroidAccessory-release.aar" />
+	  <AndroidLibrary Include="../external/IOIOLibAndroidBluetooth-release.aar" />
+	  <AndroidLibrary Include="../external/IOIOLibAndroidDevice-release.aar" />
+	  <AndroidLibrary Include="../external/IOIOLibAndroid-release.aar" />
+	  <AndroidLibrary Include="../external/IOIOLibCore-6.2.0.jar" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.3" />
+	<PackageReference Include="GitInfo" Version="3.1.1" PrivateAssets="all" />
+	<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.3" />
   </ItemGroup>
   
   <ItemGroup>
-      <PackageReference Include="Microsoft.Maui.Controls" Version="*" />
+	  <PackageReference Include="Microsoft.Maui.Controls" Version="*" />
   </ItemGroup>
 
 </Project>

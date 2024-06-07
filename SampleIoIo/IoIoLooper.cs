@@ -7,13 +7,16 @@ namespace SampleIoIo
 	{
 		IDigitalOutput? digitalOutput;
 		bool state = false;
+		bool isRunning = false;
 
 		protected override void Setup()
 		{
 			Console.WriteLine("IOIO connected, Setup");
 
 			// On board LED control
-			digitalOutput = Ioio?.OpenDigitalOutput(1, true);
+			digitalOutput = Ioio?.OpenDigitalOutput(0, true);
+
+			isRunning = true;
 		}
 
 		public void ToggleRelay()
@@ -26,15 +29,17 @@ namespace SampleIoIo
 		public override void Loop()
 		{
 			// Loop IOIO
-			while (true)
+			while (isRunning)
 			{
 				ToggleRelay();
+
 				Thread.Sleep(1000);
 			}
 		}
 
 		public override void Disconnected()
 		{
+			isRunning = false;
 			base.Disconnected();
 			Console.WriteLine("IOIO disconnected");
 		}
